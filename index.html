@@ -12,71 +12,91 @@
 
 <body>
     <header>
-        <h1>Hello, my name is <span class="name text-gradient">holoflash</span></h1>
+        <ul>
+            <li>holoflash</li>
+            <li>ABOUT</li>
+            <li>PORTFOLIO</li>
+            <li>CONTACT</li>
+        </ul>
     </header>
     <main>
-        <p class="paragraph">Can you teach yourself web development? Of course!
-            I've been doing so for the past <span class="number-of-days"></span> days
-            and here's some of the stuff I''ve learned:
-        </p>
-        <section class="tech-stack">
-            <i class="devicon-javascript-plain colored"></i>
-            <i class="devicon-react-plain colored"></i>
-            <i class="devicon-html5-plain colored"></i>
-            <i class="devicon-css3-plain colored"></i>
-            <i class="devicon-sass-plain colored"></i>
-            <i class="devicon-typescript-plain colored"></i>
-            <i class="devicon-git-plain colored"></i>
-            <i class="devicon-jest-plain colored"></i>
-            <i class="devicon-webpack-plain colored"></i>
-            <i class="devicon-nodejs-plain colored"></i>
-            <i class="devicon-express-original colored"></i>
-            <i class="devicon-mongodb-plain colored"></i>
+        <section class="about-me">
+            <h1> Hello, my name is <span class="name">holoflash</span></h1>
+            <p>
+                <strong> For the past five years,</strong> I've been a full-time freelance music
+                <a href="">producer</a>, <a href="">songwriter</a>,
+                and <a href="">musician</a>, collaborating with <a href="">international record labels</a> and private
+                employers. It's a profession I was able to teach my self - now, I'm putting the same enthusiasm into
+                web development and the questions remains...
+            </p>
         </section>
+        <section class="tech-stack">
+            <h2>Can you teach yourself web development?</h2>
+            <p>Of course!
+                I started <span class="number-of-days"></span> days
+                ago and here's some of the tech I've grown very familiar with since then:
+            </p>
+            <div class="tech-icons">
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-react-plain colored"></i>
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-sass-plain colored"></i>
+                <i class="devicon-typescript-plain colored"></i>
+                <i class="devicon-git-plain colored"></i>
+                <i class="devicon-jest-plain colored"></i>
+                <i class="devicon-webpack-plain colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+                <i class="devicon-express-original"></i>
+                <i class="devicon-mongodb-plain colored"></i>
+                <i class="devicon-photoshop-plain colored"></i>
+                <i class="devicon-illustrator-plain colored"></i>
+            </div>
+        </section>
+        <section class="portfolio">
+            <h2>Some of the websites I've built and deployed:</h2>
+            <ul>
+                <li>
+                    <h3>PREVIEW-A-SONG</h3>
+                    <p>A site that allows you to preview any song, using the iTunes API</p>
+                    <a href="">live</a>
+                    <a href="">repo</a>
+                </li>
+                <li>
+                    <h3>tic-tac-toe</h3>
+                    <p>The classic game. Play with your friends, against the PC or any combination</p>
+                    <a href="">live</a>
+                    <a href="">repo</a>
+                </li>
+                <li>
+                    <h3>queasong</h3>
+                    <p>Create Spotify playlists with your friends anywhere. Only one Spotify account required.</p>
+                    <a href="">live</a>
+                    <a href="">repo</a>
+                </li>
+                <li>
+                    <h3>This site</h3>
+                    <p>Built using plain html and css. Performance and simplicity are my jam</p>
+                    <a href="">live</a>
+                    <a href="">repo</a>
+                </li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Lets work!</h2>
+            <p>I'm excited to work on cool stuff with you. Get in touch in and lets take it from there!</p>
+            <div class="contact-links">
+                <a href="" title="linkedin page">linkedIN</a>
+                <a href="" title="my github">github</a>
+                <a href="">Download my CV [PDF, 1.5kb]</a>
+            </div>
 
-        <h3>Some of the websites I've built and deployed:</h2>
-            <section class="projects">
-                <ul>
-                    <label>
-                        PREVIEW-A-SONG
-                        <li>
-                            <p class="description">Description:</p>
-                            <a href="google.com">live</a>
-                            <a href="google.com">repo</a>
-                        </li>
-                    </label>
-
-                    <label>
-                        tic-tac-toe
-                        <li>
-                            <p class="description">Description:</p>
-                            <a href="google.com">live</a>
-                            <a href="google.com">repo</a>
-                        </li>
-                    </label>
-                    <label>
-                        queasong
-                        <li>
-                            <p class="description">Description:</p>
-                            <a href="google.com">live</a>
-                            <a href="google.com">repo</a>
-                        </li>
-                    </label>
-                    <label>
-                        PREVIEW-A-SONG
-                        <li>
-                            <p class="description">Description:</p>
-                            <a href="google.com">live</a>
-                            <a href="google.com">repo</a>
-                        </li>
-                    </label>
-                </ul>
-            </section>
+        </section>
     </main>
+    <footer>@holoflash 2023</footer>
 
     <script>
-        document.querySelector(".number-of-days")
-            .textContent = Math.ceil(Math.abs(new Date() - new Date(2022, 9, 26)) / (1000 * 3600 * 24));
+        document.querySelector(".number-of-days").textContent = Math.ceil(Math.abs(new Date() - new Date(2022, 9, 26)) / (1000 * 3600 * 24));
     </script>
 </body>
 
