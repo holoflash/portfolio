@@ -1,29 +1,52 @@
 :root {
-    --outline: solid var(--pink) 1px;
+    /* dark mode colors */
+    --main-text: #abb2bf;
+    --url-text: #56b6c2;
+    --header-text: #ebbf6c;
+    --outline: solid var(--outline-color) 1px;
     --background: #282c34;
     --darker-background: #25292f;
-    --foreground: #abb2bf;
     --selection: #20232b;
-    --comment: #5c6370;
-    --cyan: #56b6c2;
-    --green: #98c379;
-    --orange: #d19a66;
-    --pink: #c678dd;
-    --red: #e06c75;
-    --yellow: #ebbf6c;
-    --gradient: repeating-linear-gradient(to right,
-            var(--pink) 0%,
-            var(--cyan) 10%,
-            var(--green) 20%,
-            var(--orange)30%,
-            var(--yellow) 40%,
-            var(--pink) 50%,
-            var(--cyan) 70%,
-            var(--red) 80%,
-            var(--yellow) 90%,
-            var(--pink) 100%);
+    --outline-color: #777777;
     --background-gradient: linear-gradient(to bottom,
             var(--darker-background)0%, var(--background)50%, var(--darker-background)100%);
+}
+
+input:checked,
+input:checked+* {
+    /* light mode colors */
+    --main-text: #000;
+    --url-text: #009baf;
+    --header-text: #000;
+    --outline: solid #000 1px;
+    --background: #fafafa;
+    --darker-background: #fff;
+    --selection: white;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "🌚";
+    font-size: 2rem;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "🌞";
 }
 
 * {
@@ -39,140 +62,109 @@ ul {
 
 html,
 body {
-    overflow: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     font-family: sans-serif;
-    margin: auto;
-    width: 100%;
-    color: var(--foreground);
     overflow-x: hidden;
+}
+
+.container {
+    color: var(--main-text);
     background-color: var(--background);
-}
-
-footer {
-    width: 100%;
-    color: var(--foreground);
-    background-color: var(--background-gradient);
-    letter-spacing: 0.2rem;
-    text-align: center;
-    padding-block: 1rem;
-}
-
-header ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    transition: background-color 0.2s ease-in-out;
 }
 
 main {
     display: flex;
-    justify-content: center;
-    flex: 1;
     flex-direction: column;
-    max-width: 1650px;
+    align-items: center;
+    min-height: 100vh;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 5px;
-    margin: 1rem;
-}
-
-h1,
-h2,
-h3,
-p,
-li {
-    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    max-width: 60rem;
 }
 
 .about h1 {
-    font-size: 4rem;
-    color: var(--yellow);
+    margin-block: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--main-text);
 }
 
 strong {
     font-size: 1.1rem;
-    color: var(--yellow);
+    color: var(--header-text);
 }
 
 .name {
-    font-size: 6rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rotateGradient 10s linear infinite;
-    background-position-x: 0;
+    color: var(--header-text);
+    position: relative;
 }
 
-@keyframes rotateGradient {
-    0% {
-        background-position-x: 0
-    }
-
-    50% {
-        background-position-x: 1000px;
-    }
-
-    100% {
-        background-position-x: 0
-    }
+.name::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--url-text);
+    transform: rotate(-1deg);
+    transform-origin: bottom left;
 }
 
 .about a,
 .portfolio a,
 .contact a {
-    color: var(--cyan);
-    font-size: 1.1rem;
+    color: var(--url-text);
 }
 
 .about p {
-    border-inline: var(--outline);
-    border-bottom: var(--outline);
-    padding: 1em;
-    color: var(--foreground);
-    margin-block: 2rem;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.1);
+    text-align: justify;
+    color: var(--main-text);
+}
+
+.portfolio {
+    max-width: 64rem;
 }
 
 .portfolio ul {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .portfolio li {
-    margin-block: 2rem;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.1);
+    margin: 1rem;
+
     position: relative;
-    max-width: 30rem;
+    max-width: 28rem;
     height: fit-content;
 }
 
 .portfolio p {
     background-color: var(--darker-background);
     padding: 1em;
-    border-width: 2px;
-    border-style: solid;
-    border-image-source: var(--gradient);
-    border-image-slice: 1;
-    border-image-repeat: round;
+    height: 5rem;
+    border-inline: var(--outline);
+    border-bottom: var(--outline);
     position: relative;
+
 }
 
 .portfolio a,
 .contact a {
-    color: var(--cyan);
+    color: var(--url-text);
     font-size: 1.1rem;
 }
 
 .portfolio h2 {
-    color: var(--yellow);
+    color: var(--header-text);
     font-size: 2rem;
 }
 
@@ -180,7 +172,7 @@ strong {
     border-inline: var(--outline);
     border-bottom: var(--outline);
     font-size: 1rem;
-    color: var(--yellow);
+    color: var(--header-text);
     letter-spacing: 0.1rem;
     margin-block: 1rem;
     padding: 1rem;
@@ -207,6 +199,11 @@ strong {
 i {
     text-align: center;
     font-size: 2rem;
+    transition: transform 0.2s;
+}
+
+i:hover {
+    transform: scale(1.1);
 }
 
 .contact {
@@ -215,19 +212,15 @@ i {
     flex-direction: column;
 }
 
-.contact p {
-    margin-block: 2rem;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.1);
-    border-inline: var(--outline);
-    border-bottom: var(--outline);
-    padding: 1em;
-    color: var(--foreground);
-}
-
 .contact-links {
     display: flex;
     align-items: center;
-    font-size: 10rem;
+    justify-content: space-around;
+}
+
+.contact-links i {
+    cursor: pointer;
+    font-size: 5rem;
 }
 
 .contact-links a {
@@ -237,7 +230,13 @@ i {
     margin: 1rem;
 }
 
+.contact p {
+    margin: 1rem;
+}
+
 .contact h2 {
-    font-size: 3rem;
-    color: var(--yellow);
+    margin: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--header-text);
 }
