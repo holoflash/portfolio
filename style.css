@@ -24,28 +24,24 @@ input:checked+* {
     --selection: white;
 }
 
-input[type="checkbox"] {
+input {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
     top: 1rem;
-    left: 0;
-    right: 0;
-    text-align: center;
+    left: 50%;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
 }
 
-input[type="checkbox"]::before {
+input::before {
+    position: absolute;
     content: "🌚";
     font-size: 2rem;
-    position: absolute;
     transition: transform 0.2s ease-in-out;
 }
 
-input[type="checkbox"]:checked::before {
+input:checked::before {
     content: "🌞";
 }
 
@@ -62,6 +58,7 @@ ul {
 
 html,
 body {
+    font-size: 18px;
     font-family: sans-serif;
     overflow-x: hidden;
 }
@@ -75,6 +72,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
@@ -128,10 +126,6 @@ strong {
     color: var(--main-text);
 }
 
-.portfolio {
-    max-width: 64rem;
-}
-
 .portfolio ul {
     display: flex;
     align-items: center;
@@ -140,8 +134,8 @@ strong {
 }
 
 .portfolio li {
+    align-self: flex-start;
     margin: 1rem;
-
     position: relative;
     max-width: 28rem;
     height: fit-content;
@@ -150,11 +144,9 @@ strong {
 .portfolio p {
     background-color: var(--darker-background);
     padding: 1em;
-    height: 5rem;
     border-inline: var(--outline);
     border-bottom: var(--outline);
     position: relative;
-
 }
 
 .portfolio a,
@@ -182,8 +174,8 @@ strong {
 
 .tech-icons {
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -7px;
+    left: 7px;
     z-index: 1;
     width: fit-content;
     display: flex;
@@ -198,7 +190,7 @@ strong {
 
 i {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     transition: transform 0.2s;
 }
 
