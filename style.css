@@ -4,46 +4,46 @@
     --url-text: #56b6c2;
     --header-text: #ebbf6c;
     --outline: solid var(--outline-color) 1px;
-    --background: #282c34;
+    --background: #2b2f37;
     --darker-background: #25292f;
     --selection: #20232b;
     --outline-color: #777777;
-    --background-gradient: linear-gradient(to bottom,
-            var(--darker-background)0%, var(--background)50%, var(--darker-background)100%);
 }
 
+/* light mode colors */
 input:checked,
 input:checked+* {
-    /* light mode colors */
     --main-text: #000;
-    --url-text: #009baf;
-    --header-text: #000;
+    --url-text: #03a5ba;
+    --header-text: #f6b337;
     --outline: solid #000 1px;
-    --background: #fafafa;
-    --darker-background: #fff;
-    --selection: white;
+    --background: white;
+    --darker-background: white;
 }
 
 input {
-    transform: rotate(0, 0, 0, 0 20deg);
     position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    text-align: center;
+    right: 5px;
+    top: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--header-text);
+    padding: 3px;
+    padding-inline: 8px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: var(--background);
+    animation: pull 2s ease;
 }
 
 input::before {
-    content: "😎";
+    content: "😎"
 }
 
 input:checked::before {
-    content: "😇";
+    content: "😇 ";
 }
 
 * {
@@ -64,7 +64,7 @@ ul {
 html,
 body {
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     font-family: sans-serif;
     overflow-x: hidden;
 }
@@ -113,16 +113,27 @@ strong {
     text-decoration-color: var(--url-text);
 }
 
+.name:hover {
+    animation: tada 1s ease-in-out;
+}
+
 .about a,
 .portfolio a,
 .contact a {
     color: var(--url-text);
+    transition: color 0.2s ease-in-out;
 }
 
 .about p {
     text-align: justify;
     color: var(--main-text);
+    transition: color 0.2s ease-in-out;
+    margin-bottom: 0;
     margin: 1rem;
+}
+
+.portfolio {
+    margin-top: 0;
 }
 
 .portfolio ul {
@@ -141,60 +152,64 @@ strong {
 }
 
 .portfolio p {
-    background-color: var(--darker-background);
+    position: relative;
     padding: 1em;
     border-inline: var(--outline);
     border-bottom: var(--outline);
-    position: relative;
+    color: var(--secondary-text);
+    transition: background-color 0.2s ease-in-out;
 }
 
 .portfolio a,
 .contact a {
     color: var(--url-text);
+    transition: color 0.2s ease-in-out;
     font-size: 1.1rem;
 }
 
 .portfolio h2 {
     color: var(--header-text);
+    transition: color 0.2s ease-in-out;
     font-size: 2rem;
 }
 
 .portfolio h3 {
+    background-image: var(--svg);
     border-inline: var(--outline);
     border-bottom: var(--outline);
     font-size: 1rem;
     color: var(--header-text);
     letter-spacing: 0.1rem;
-    margin-block: 1rem;
+    margin-block: 0.5rem;
     padding: 1rem;
-    padding-top: 2rem;
     background-color: var(--selection);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .tech-icons {
-    position: absolute;
-    top: -7px;
-    left: 7px;
-    z-index: 1;
-    width: fit-content;
+    border-inline: var(--outline);
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-image: var(--svg);
 }
 
 .tech-icons>* {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
 }
 
 i {
     text-align: center;
-    font-size: 1.8rem;
-    transition: transform 0.2s;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    color: var(--header-text);
+    transition: transform 0.1s linear;
 }
 
 i:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 .contact {
@@ -211,7 +226,7 @@ i:hover {
 
 .contact-links i {
     cursor: pointer;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .contact-links a {
@@ -230,4 +245,5 @@ i:hover {
     text-align: center;
     font-size: 2rem;
     color: var(--header-text);
+    transition: color 0.2s ease-in-out;
 }
