@@ -122,14 +122,6 @@ a {
     transition: color 0.2s ease-in-out;
 }
 
-@media only screen and (max-width: 1023px) {
-
-    .section,
-    p {
-        max-width: 28rem;
-    }
-}
-
 .portfolio {
     margin-top: 0;
 }
@@ -197,25 +189,6 @@ i {
     padding: 0.4rem;
     color: var(--main-text);
     transition: transform 0.1s linear;
-}
-
-@media only screen and (max-width:350px) {
-    .tech-icons {
-        position: relative;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        border-inline: var(--outline);
-        padding: 1rem;
-        color: var(--header-text);
-        background-color: var(--selection);
-    }
-
-    .tech-icons>* {
-        padding: 0.1rem;
-    }
 }
 
 .contact {
@@ -289,7 +262,6 @@ i {
         opacity: 0;
     }
 
-
     to {
         opacity: 1;
         transform: translateX(0%);
@@ -308,5 +280,33 @@ i {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@media only screen and (max-width:350px) {
+    .tech-icons {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        border-inline: var(--outline);
+        padding: 1rem;
+        color: var(--header-text);
+        background-color: var(--selection);
+    }
+
+    .tech-icons>* {
+        padding: 0.1rem;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    .section,
+    .about h1,
+    p {
+        max-width: 28rem;
     }
 }
