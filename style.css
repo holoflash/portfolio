@@ -85,18 +85,16 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     max-width: 60rem;
 }
 
 .about h1 {
-    margin-block: 2rem;
-    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-size: 5rem;
     color: var(--main-text);
 }
 
 strong {
-    font-size: 1.1rem;
     color: var(--header-text);
 }
 
@@ -114,16 +112,13 @@ a {
 .about {
     margin: 1rem;
     margin-bottom: 2rem;
+    max-width: 58rem;
 }
 
 .about p {
     text-align: justify;
     color: var(--main-text);
     transition: color 0.2s ease-in-out;
-}
-
-.portfolio {
-    margin-top: 0;
 }
 
 .portfolio ul {
@@ -193,19 +188,19 @@ i {
 
 .contact {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-links {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .contact-links i {
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .contact-links a {
@@ -216,13 +211,14 @@ i {
 }
 
 .contact p {
-    margin: 1rem;
+    text-align: justify;
+
 }
 
 .contact h2 {
+    font-style: italic;
     margin: 1rem;
-    text-align: center;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: var(--header-text);
     transition: color 0.2s ease-in-out;
 }
@@ -240,7 +236,7 @@ i {
 .balloon {
     opacity: 0;
     animation: balloon 1s ease-out forwards;
-    animation-delay: 2500ms;
+    animation-delay: 1000ms;
 
 }
 
@@ -274,7 +270,7 @@ i {
     }
 
     50% {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     to {
@@ -303,9 +299,13 @@ i {
 }
 
 @media only screen and (max-width: 991px) {
+    .about h1 {
+        font-size: 2.5rem;
+    }
 
     .section,
     .about h1,
+    .contact,
     p {
         max-width: 28rem;
     }
