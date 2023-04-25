@@ -74,7 +74,8 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3rem;
     align-items: center;
     min-height: 100vh;
     max-width: 100%;
@@ -127,11 +128,12 @@ a {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
+    margin-inline: 1rem;
 }
 
 .portfolio li {
     align-self: flex-start;
-    margin: 1rem;
     position: relative;
     max-width: 28rem;
     height: fit-content;
@@ -213,7 +215,7 @@ i {
 
 .contact p {
     text-align: justify;
-
+    padding-inline: 1rem;
 }
 
 .contact h2 {
@@ -300,6 +302,9 @@ i {
 }
 
 @media only screen and (max-width: 991px) {
+    main {
+        gap: 0;
+    }
 
     .slideInLeft,
     .slideInRight,
